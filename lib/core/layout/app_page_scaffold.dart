@@ -1,0 +1,33 @@
+import 'package:flutter/material.dart';
+
+import '../widgets/app_top_bar.dart';
+
+class AppPageScaffold extends StatelessWidget {
+  const AppPageScaffold({
+    super.key,
+    required this.title,
+    required this.body,
+    this.actions,
+    this.floatingActionButton,
+    this.backgroundColor,
+  });
+
+  final String title;
+  final Widget body;
+  final List<Widget>? actions;
+  final Widget? floatingActionButton;
+  final Color? backgroundColor;
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: backgroundColor,
+      appBar: AppTopBar(
+        title: title,
+        actions: actions,
+      ),
+      body: body,
+      floatingActionButton: floatingActionButton,
+    );
+  }
+}
