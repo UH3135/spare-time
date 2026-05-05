@@ -7,6 +7,7 @@ class AppPageScaffold extends StatelessWidget {
     super.key,
     required this.title,
     required this.body,
+    this.appBarVariant = AppTopBarVariant.primary,
     this.actions,
     this.floatingActionButton,
     this.backgroundColor,
@@ -14,6 +15,7 @@ class AppPageScaffold extends StatelessWidget {
 
   final String title;
   final Widget body;
+  final AppTopBarVariant appBarVariant;
   final List<Widget>? actions;
   final Widget? floatingActionButton;
   final Color? backgroundColor;
@@ -24,6 +26,7 @@ class AppPageScaffold extends StatelessWidget {
       backgroundColor: backgroundColor,
       appBar: AppTopBar(
         title: title,
+        variant: appBarVariant,
         actions: actions,
       ),
       body: body,

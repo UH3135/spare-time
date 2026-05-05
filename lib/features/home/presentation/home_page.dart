@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../core/layout/app_page_scaffold.dart';
+import '../../../core/widgets/app_top_bar.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -8,6 +9,7 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AppPageScaffold(
+      appBarVariant: AppTopBarVariant.primary,
       title: '짜투리 시간',
       actions: [
         IconButton(
