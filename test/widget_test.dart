@@ -4,13 +4,13 @@ import 'package:spare_time/core/layout/app_page_scaffold.dart';
 import 'package:spare_time/core/widgets/app_top_bar.dart';
 
 void main() {
-  testWidgets('AppPageScaffold uses primary top bar variant by default', (
+  testWidgets('AppPageScaffold renders the provided app bar', (
     WidgetTester tester,
   ) async {
     await tester.pumpWidget(
       const MaterialApp(
         home: AppPageScaffold(
-          title: '짜투리 시간',
+          appBar: AppTopBar(title: '짜투리 시간'),
           body: SizedBox.shrink(),
         ),
       ),
@@ -18,6 +18,7 @@ void main() {
 
     final appTopBar = tester.widget<AppTopBar>(find.byType(AppTopBar));
 
+    expect(find.text('짜투리 시간'), findsOneWidget);
     expect(appTopBar.variant, AppTopBarVariant.primary);
   });
 }

@@ -9,6 +9,7 @@ class AppTopBar extends StatelessWidget implements PreferredSizeWidget {
     this.variant = AppTopBarVariant.primary,
     this.leading,
     this.actions,
+    this.showBackButton = false,
     this.backgroundColor,
     this.foregroundColor,
     this.elevation = 0,
@@ -18,6 +19,7 @@ class AppTopBar extends StatelessWidget implements PreferredSizeWidget {
   final AppTopBarVariant variant;
   final Widget? leading;
   final List<Widget>? actions;
+  final bool showBackButton;
   final Color? backgroundColor;
   final Color? foregroundColor;
   final double elevation;
@@ -31,7 +33,7 @@ class AppTopBar extends StatelessWidget implements PreferredSizeWidget {
     final style = _resolveStyle(theme);
 
     return AppBar(
-      leading: leading,
+      leading: leading ?? (showBackButton ? const BackButton() : null),
       actions: actions,
       centerTitle: false,
       elevation: style.elevation,

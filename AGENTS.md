@@ -19,6 +19,7 @@
 - Keep implementations minimal and follow YAGNI. Add only the variant or abstraction needed by the current screen.
 - Reuse shared UI through `core/` before adding page-specific copies.
 - Prefer small, explicit changes over speculative architecture.
+- Commit messages should be written in Korean.
 
 ## Tests And Checks
 
